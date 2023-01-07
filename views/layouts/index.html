@@ -31,6 +31,51 @@
       </nav>
     </header>
 
+<!-- TEMPLATE FOR LOGIN/SIGN UP      -->
+<div class="container blog-contents-card card d-flex align-items-center justify-content-center">
+<div class="row justify-space-between-md d-flex flex-column m-4">
+    <div class="login-card">
+      <h2 class="page-title">Login</h2>
+      <form class="form login-form">
+        <div class="form-group">
+          <label for="email-login">Email:</label>
+          <input class="form-input" type="text" id="email-login" />
+        </div>
+        <div class="form-group">
+          <label for="password-login">Password:</label>
+          <input class="form-input" type="password" id="password-login" />
+        </div>
+        <div class="form-group">
+          <button class="btn btn-sm btn-outline-secondary" type="submit">login</button>
+        </div>
+      </form>
+    </div>
+    <div class="login-card">
+      <h2 class="page-title">Signup</h2>
+      <form class="form signup-form">
+        <div class="form-group">
+          <label for="username-signup">Username:</label>
+          <input class="form-input" type="text" id="username-signup" />
+        </div>
+        <div class="form-group">
+          <label for="email-signup">Email:</label>
+          <input class="form-input" type="text" id="email-signup" />
+        </div>
+        <div class="form-group">
+          <label for="password-signup">Password:</label>
+          <input class="form-input" type="password" id="password-signup" />
+        </div>
+        <div class="form-group">
+          <button class="btn btn-sm btn-outline-secondary" type="submit">signup</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script src="./js/login.js"></script>
+
+
 <!-- HTML TEMPLATE FOR DISPLAYING EXISTING BLOGS AND OPTION TO ADD NEW -->
 <div class="dashboard-container container d-flex flex-column align-items-center ">
 
@@ -39,7 +84,7 @@
     <!-- add a blog post form  -->
     <div class="add-blog-container container card">
         <div class="mb-1 p-1">
-            <label for="post-title" class="form-label">Create a New Blog Post:</label>
+            <label for="post-title" class="form-label">Post:</label>
             <input type="email" class="form-control" id="post-title" placeholder="Title of the blog">
         </div>
         <div class="mb-3 p-1 d-flex align-items-end flex-column">
@@ -104,5 +149,5 @@
 
     
 </body>
-
+<script src="../../JS/login.js"></script>
 </html>
