@@ -2,16 +2,16 @@
 {
     "title": "Why Every Business Needs JavaScript",
     "contents": "JavaScript is a powerful programming language that is essential for businesses that want to succeed online. It is used to build web applications and add interactivity to websites, which can enhance the user experience and improve the functionality and efficiency of a business. JavaScript can also improve the speed and performance of a website, which can lead to better search engine rankings and more traffic. Its versatility allows businesses to use it to achieve a wide range of objectives. Overall, JavaScript is an important tool for businesses to consider in order to stay competitive and achieve success online.",
-    "user_id":"steven123"
+    "user_id":"1"
   },
   {
     "title": "The Importance of Good Posture When Coding",
     "contents": "Good posture is important for programmers to maintain in order to avoid discomfort, improve focus and productivity, prevent eye strain, and reduce the risk of carpal tunnel syndrome. To maintain good posture when coding, it is important to sit up straight in an ergonomic chair, position your computer monitor at eye level, use a comfortable keyboard and mouse, and take breaks and stretch regularly. Taking care of your posture can help you have a more comfortable and productive coding experience.",
-    "user_id":"John456"
+    "user_id":"2"
   },
   {
     "title": "Why Encrypting Passwords is Essential for Online Security",
     "contents": "Encrypting passwords is essential for online security because it helps to protect sensitive user data by storing it in a secure, scrambled form that can only be decrypted with the proper key or algorithm. This makes it much more difficult for unauthorized parties to access user passwords, even if they manage to compromise the database where the passwords are stored. By encrypting passwords, businesses and organizations can ensure that their users' data is secure and their systems are less vulnerable to attacks. In addition to encryption, it is also important to follow good password management practices such as using strong, unique passwords for each account, avoiding password reuse, and regularly updating passwords.",
-    "user_id":"Mark789"
+    "user_id":"3"
   }
 ]

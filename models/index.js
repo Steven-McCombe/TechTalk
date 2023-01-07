@@ -11,7 +11,7 @@ User.hasMany(Blog, {
 
 //Many to one Relationship - User has Many comments but a comment can only have one user.
 //If the user is deleted CASCADE will delete all their comment entries.
-User.hasMany(Comment, {
+User.hasMany(Comments, {
     foreignKey: 'user_id:',
     onDelete: 'CASCADE'
 })
@@ -21,7 +21,7 @@ Blog.belongsTo(User, {
     foreignKey: 'user_id'
 });
 
-Comment.belongsTo(User, {
+Comments.belongsTo(User, {
     Through: {
         model: Blog,
         foreignKey: 'id'
