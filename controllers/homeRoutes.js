@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const sequelize = require('../config/connection');
 const { User, Blog, Comments } = require('../models');
 const withAuth = require('../utils/auth');
 
@@ -7,6 +8,7 @@ router.get('/', async (req, res) => {
     try {
         // Get all Blogs and JOIN with user data
         const blogData = await Blog.findAll({
+            attributes: ['id', 'title', 'contents', 'created_at'],
             include: [
                 {
                     model: User,
@@ -14,9 +16,9 @@ router.get('/', async (req, res) => {
                 },
             ],
         });
-
+console.log(blogData)
         const blogs = blogData.map((blog) => blog.get({ plain: true }));
-
+console.log(blogs)
         res.render('homepage', {
             blogs,
             logged_in: req.session.logged_in
@@ -25,3 +27,5 @@ router.get('/', async (req, res) => {
         res.status(500).json(err);
     }
 });
+
+module.exports = router; 

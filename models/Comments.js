@@ -14,7 +14,7 @@ Comments.init(
     comment_body: {
       type: DataTypes.TEXT,
     },
-    date_created: {
+    created_at: {
       type: DataTypes.DATE,
       allowNull: false,
       defaultValue: DataTypes.NOW,
