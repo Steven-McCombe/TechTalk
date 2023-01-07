@@ -17,7 +17,35 @@
 </head>
 
 <body>
+        <header class="header container">
+      <h2><i class='fas fa-terminal' style='color:#ffc107'></i>TechTalk</h2>
+      <p class="slogan">Join the conversation and stay ahead of the curve.</p>
+      <!-- Navigation bar -->
+      <nav class="navbar-light">
+        <form class="form-inline">
+          <button class="btn btn-sm btn-outline-secondary" type="button"><i alt="home icon" class='fas fa-home' style='color:#ffc107'></i> Home</button>
+          <button class="btn btn-sm btn-outline-secondary" type="button"><i alt="dashboard icon" class='fas fa-archive' style='color:#ffc107'></i> Dashboard</button>
+        <!-- Conditionally render login or logout buttons -->
+          {{#if logged_in}}
+          <button id = "logout" class="btn btn-sm btn-outline-secondary" type="button"><i alt="logout icon" class='fas fa-user' style='color:#ffc107'></i> Logout</button>
+          {{else}}
+          <button id = "login" class="btn btn-sm btn-outline-secondary" type="button"><i alt="login icon" class='fas fa-user' style='color:#ffc107'></i> Login </button>
+          {{/if}}
+        </form>
+      </nav>
+      {{!-- conditionally render login banner to prompt the user to login  --}}
+    {{#if logged_in}}
+      <p class="loginbanner">Login to start posting today</p>
+    {{/if}}
+    </header>
+
     {{body}}
 </body>
 
 </html>
+
+
+  <!-- Render script for logged in users only -->
+  {{#if logged_in}}
+  <script src="../../js/logout.js"></script>
+  {{/if}}
