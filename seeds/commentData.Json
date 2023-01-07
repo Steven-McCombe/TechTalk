@@ -1,0 +1,28 @@
+[
+    {
+        "blog_id": "1",
+        "comment_body": "This was a fantastic read!",
+        "user_id":"Mark789"
+    },
+    {
+        "blog_id": "2",
+        "comment_body": "I was wondering why my back was sore",
+        "user_id":"Steven123"
+    },
+    {
+        "blog_id": "2",
+        "comment_body": "My eyes are hurting! Maybe ill try adjust the height of my monitor. Thanks for this wonderful advice",
+        "user_id":"Mark789"
+    },
+    {
+        "blog_id": "3",
+        "comment_body": "I got hacked last week due to a website not encrypting my password. They stored it as plain text :(",
+        "user_id":"John456"
+    },
+    {
+        "blog_id": "3",
+        "comment_body": "Solid advice thank you",
+        "user_id":"Steven123"
+    },
+      
+    ]
