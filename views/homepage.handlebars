@@ -1,7 +1,8 @@
-{{#each blog as |blogs|}}
+{{#each blogs as |blog|}}
     <div class="container">
       <div class="blog-post">
-        <div class="card blog-contents-card">
+        <div class="card blog-contents-card card-custom">
+          <p style="font-size:10px">ID #{{id}}</p>
           <h2>{{title}}</h2>
           <p class="blog-text-contents">{{preview_contents contents}} <a href="/blog/{{id}}">...read more</a></p>
           <div class= "d-flex justify-content-between">

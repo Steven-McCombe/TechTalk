@@ -7,7 +7,9 @@ body {
   padding: 20px;
   background: #f1f1f1;
 }
-
+h2 {
+  font-weight: bold;
+}
 .btn {
   background-color: #fff;
   border: solid 1px black;
@@ -135,11 +137,9 @@ margin-top: 5px;
 .span-username{
   font-weight: bold;
 }
-span:hover{
-  color: rgb(71, 71, 231);
-}
-.viewicon:hover{
-  color: rgb(71, 71, 231);
+
+.view-icon:hover{
+  color: blue;
   cursor: pointer;
 }
 .delete-icon:hover{
