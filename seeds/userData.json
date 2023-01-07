@@ -1,17 +1,17 @@
 [
     {
-      "name": "steven123",
-      "email": "steven123@gmail.com",
+      "name": "Steven123",
+      "email": "Steven123@gmail.com",
       "password": "password123"
     },
     {
-      "name": "steven345",
-      "email": "steven345@gmail.com",
+      "name": "John345",
+      "email": "John345@gmail.com",
       "password": "password345"
     },
     {
-      "name": "steven789",
-      "email": "steven789@gmail.com",
+      "name": "Mark789",
+      "email": "Mark789@gmail.com",
       "password": "password789"
     }
   ]
