@@ -29,14 +29,14 @@
           {{#if logged_in}}
           <button id = "logout" class="btn btn-sm btn-outline-secondary" type="button"><i alt="logout icon" class='fas fa-user' style='color:#ffc107'></i> Logout</button>
           {{else}}
-          <button id = "login" class="btn btn-sm btn-outline-secondary" type="button"><i alt="login icon" class='fas fa-user' style='color:#ffc107'></i> Login </button>
+          <button id = "login" class="btn btn-sm btn-outline-secondary" type="button"><i alt="login icon" class='fas fa-user' style='color:#ffc107'></i> Login/Signup </button>
           {{/if}}
       </form>
     </nav>
       {{!-- conditionally render login banner to prompt the user to login  --}}
-    {{#if logged_in}}
-      <p class="loginbanner">Login to start posting today</p>
-    {{/if}}
+    {{#unless logged_in}}
+      <p class="loginbanner"  style="color: rgb(210, 64, 64);"><a href="/login">Login/Signup to start posting today</a></p>
+    {{/unless}}
   </header>
 
     {{{body}}}

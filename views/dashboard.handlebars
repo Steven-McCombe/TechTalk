@@ -2,7 +2,7 @@
 <div class="dashboard-container container d-flex flex-column align-items-center ">
 
     <!-- dashboard header  -->
-    <h5 class="dashboard-header">Welcome back [username]. Would you like to add a new blog post?</h5>
+    <h5 class="dashboard-header">Welcome back {{user.name}}. Would you like to add a new blog post?</h5>
     <!-- add a blog post form  -->
     <div class="add-blog-container container card">
         <div class="mb-1 p-1">
@@ -17,6 +17,9 @@
     </div>
     <!-- existing blogs div -->
     <h5 class="dashboard-header">View your existing blog posts below</h5>
+
+
+    {{#each userBlog as |userBlogs|}}
     <div class="container existing-blogs" >
         <!-- template for existing blog with icons for editing  -->
         <div class="card card-custom m-1" href=""> 
@@ -24,12 +27,16 @@
                 <span class="view-icon"><i class='fas fa-eye m-2'></i></span>
                 <span class="delete-icon"><i class='fas fa-trash m-2' style=></i></span>
                 <span class="edit-icon"><i class='fas fa-pencil-alt m-2'></i></span>
-                [Post Title]
+                {{title}}
             </h2>
-            <h5>Created by: <span class="span-username">[Username]</span></h5>
-            <p class="blog-text-contents">[Text Content] </p>
-            <h5 class="date" style="text-align:right;"><span class="span-date">[date]</span></h5>
+            <h5>Created by: <span class="span-username">{{user.name}}</span></h5>
+            <p class="blog-text-contents">{{contents}} </p>
+            <h5 class="date" style="text-align:right;"><span class="span-date">{{created_at}}</span></h5>
         </div>
 
     </div>
+    {{/each}}
+
 </div>
+
+

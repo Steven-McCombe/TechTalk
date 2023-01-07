@@ -13,5 +13,8 @@
     "title": "Why Encrypting Passwords is Essential for Online Security",
     "contents": "Encrypting passwords is essential for online security because it helps to protect sensitive user data by storing it in a secure, scrambled form that can only be decrypted with the proper key or algorithm. This makes it much more difficult for unauthorized parties to access user passwords, even if they manage to compromise the database where the passwords are stored. By encrypting passwords, businesses and organizations can ensure that their users' data is secure and their systems are less vulnerable to attacks. In addition to encryption, it is also important to follow good password management practices such as using strong, unique passwords for each account, avoiding password reuse, and regularly updating passwords.",
     "user_id":"3"
-  }
+  },
+  {    "title": "The Benefits of Tech in the Healthcare Industry",
+  "contents": "Using technology in healthcare has numerous benefits. It can improve patient outcomes, reduce errors, and increase efficiency. For example, electronic health records (EHRs) allow healthcare providers to access patient information quickly and easily, reducing the risk of misdiagnosis or treatment mistakes. Telemedicine enables patients to receive care remotely, improving access to healthcare for those in underserved or rural areas. Wearable devices and smart home devices can help patients manage chronic conditions and monitor their health. AI can also be used to analyze medical data and assist with diagnosis and treatment planning. Overall, the use of technology in healthcare can lead to better care and improved patient outcomes.",
+  "user_id":"2"}
 ]

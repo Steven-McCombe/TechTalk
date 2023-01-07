@@ -18,15 +18,23 @@ User.hasMany(Comments, {
 
 // One to Many Relationship - Specifies that a Blog belongs to a user. 
 Blog.belongsTo(User, {
-    foreignKey: 'user_id'
+    foreignKey: 'user_id',
+    onDelete: 'CASCADE'
 });
 
-Comments.belongsTo(User, {
-    Through: {
-        model: Blog,
-        foreignKey: 'id'
-    }
+Blog.hasMany(Comments, {
+    foreignKey: 'blog_id',
+    onDelete: 'CASCADE'
 })
 
+Comments.belongsTo(User, {
+    foreignKey: 'user_id',
+    onDelete: 'CASCADE'
+})
+
+Comments.belongsTo(Blog, {
+    foreignKey: 'blog_id',
+    onDelete: 'CASCADE'
+})
 
 module.exports = { Blog, User, Comments };
