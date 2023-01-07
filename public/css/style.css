@@ -1,7 +1,6 @@
 * {
   box-sizing: border-box;
 }
-
 /* Add a gray background color with some padding */
 body {
   font-family: Arial;
@@ -21,15 +20,27 @@ body {
 
 .header p {
   font-size: 20px;
+  
+}
+.dashboard-header{
+  margin: 10px;
+  padding: 10px;
 
 }
-
+.btn:hover {
+  color:#ffc107;
+}
 /* Add a card effect for articles */
 .card {
    background-color: white;
    padding: 20px;
-   margin-top: 20px;
+   /* margin-top: 20px; */
   }
+
+.card-custom:hover{
+  background-color: #ffc107;
+}  
+
 /* blog post section */
 .blog-contents-card {
 border-radius: 10px;
@@ -119,10 +130,19 @@ margin-top: 5px;
 .span-username{
   font-weight: bold;
 }
-/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other
-@media screen and (max-width: 800px) {
-  .leftcolumn, .rightcolumn {   
-    width: 100%;
-    padding: 0;
-  } */
-/* } */
+span:hover{
+  color: rgb(71, 71, 231);
+}
+.viewicon:hover{
+  color: rgb(71, 71, 231);
+  cursor: pointer;
+}
+.delete-icon:hover{
+  color: red;
+  cursor: pointer;
+}
+.edit-icon:hover{
+  color: green;
+  cursor: pointer;
+}
+
