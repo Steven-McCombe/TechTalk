@@ -3,6 +3,8 @@ const { Blog, User, Comments} = require('../../models');
 const sequelize = require('../../config/connection');
 const withAuth = require('../../utils/auth');
 
+
+/// GET REQUESTS DO NOT REQUIRE AUTH
 //Get all blogs
 router.get('/', async (req, res) => {
   try {
@@ -12,6 +14,7 @@ router.get('/', async (req, res) => {
         {
           model: User,
           attributes: ['name'],
+          exclude: ['password']
         },
       ],
       order: [['created_at', 'DESC']],
@@ -23,7 +26,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-//Find blogs by id
+//Find blogs by id. Returns data from the user model to show creator
 router.get('/:id', async (req, res) => {
   try {
     // get the id from the request parameters
@@ -32,11 +35,22 @@ router.get('/:id', async (req, res) => {
     // use the id to retrieve the specific blog from the database
     const blogData = await Blog.findByPk(id, {
       attributes: ['id', 'title', 'contents', 'created_at'],
+      //returns data from user model to show who created it
       include: [
         {
           model: User,
           attributes: ['name'],
+          exclude: ['password']
         },
+        //returns data from the comment model to show related comments. 
+        {
+          model: Comments,
+          attributes: ['id', 'comment_body', 'blog_id', 'user_id', 'created_at'],
+          include: {
+            model: User,
+            attributes: ['name']
+          },
+        }
       ],
     });
 
