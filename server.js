@@ -17,7 +17,7 @@ const hbs = exphbs.create({ helpers });
 
 //cookie will expire after 5 minutes
 const sess = {
-  secret: process.env.SECRET,
+  secret: 'Super secret secret',
   cookie: {
     maxAge: 1000 * 60 * 60 * 2 // 2 hours in milliseconds
   },
