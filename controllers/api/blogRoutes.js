@@ -85,21 +85,25 @@ router.post('/', withAuth, async (req, res) => {
     }
   });
 //Edit a blog post 
-router.put('/:id', withAuth, async (req, res) => {
+
+router.put('/:id', withAuth,  async (req, res) => {
   try {
-    const blogData = await Blog.update(
+    const editblogData = await Blog.update(
       {
         title: req.body.title,
-        contents: req.body.content,
-        user_id: req.session.user_id,
+        contents: req.body.contents,
+        user_id: req.session.user_id
       },
       {
-        where: req.params.id,
+        where: {
+          id: req.params.id,
+        },
       }
     );
-    res.json(blogData);
+    res.json(editblogData);
   } catch (err) {
     console.log(err);
+    console.log('Here')
     res.status(500).json(err);
   }
 });

@@ -1,7 +1,7 @@
 
 {{#each editBlogs}}
 <div class="container d-flex flex-column align-items-center justify-content-center">
-<h2> Editor</h2>
+<h2> Blog Post Editor</h2>
 <div class="add-blog-container container card">
         <div class="mb-1 p-1">
             <label for="post-title" class="form-label">Edit Title:</label>
@@ -10,9 +10,10 @@
             <label for="post-content" class="form-label">Edit Contents:</label>
         <div class="mb-3 p-1 d-flex align-items-end flex-column">
             <textarea class="form-control" placeholder="Contents of the Blog" id="edit-content" rows="10">{{contents}}</textarea>
-            <button id = "saveButton" class="btn btn-sm btn-outline-secondary " type="button"><i class='fas fa-plus' style='color:#ffc107'></i> Save Changes</button>
+            <button value = {{id}} id = "saveButton" class="btn btn-sm btn-outline-secondary " type="button"><i class='fas fa-plus' style='color:#ffc107'></i> Save Changes</button>
         </div>
     </div>
 </div>
 {{/each}}
 
+<script src="/js/blogedit.js"></script>
