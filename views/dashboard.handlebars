@@ -1,24 +1,28 @@
 <!-- DASHBOARD HTML TEMPLATE FOR DISPLAYING EXISTING BLOGS AND OPTION TO ADD NEW -->
 
 <div class="dashboard-container container d-flex flex-column align-items-center ">
-
     <!-- dashboard header  -->
-    <h5 class="dashboard-header">Welcome back {{userBlogs.0.user.name}}. Would you like to add a new blog post?</h5>
+    <h2>Dashboard</h2>
+    <h5 class="dashboard-header">👤 {{userBlogs.0.user.name}}</h5>
     <!-- add a blog post form  -->
     <div class="add-blog-container container card">
         <div class="mb-1 p-1">
-            <label for="post-title" class="form-label">Post:</label>
-            <input type="email" class="form-control" id="post-title" placeholder="Title of the blog">
+            <label for="post-title" class="form-label">Would you like to add a new blog post?</label>
+            <textarea class="form-control" placeholder="Title of the Blog" id="post-title" rows="1"></textarea>
         </div>
         <div class="mb-3 p-1 d-flex align-items-end flex-column">
             <label for="post-content" class="form-label"></label>
             <textarea class="form-control" placeholder="Contents of the Blog" id="post-content" rows="3"></textarea>
-            <button class="btn btn-sm btn-outline-secondary " type="button"><i class='fas fa-plus' style='color:#ffc107'></i> Add Post</button>
+            <button id = "postButton" class="btn btn-sm btn-outline-secondary " type="button"><i class='fas fa-plus' style='color:#ffc107'></i> Add Post</button>
         </div>
     </div>
+    
     <!-- existing blogs div -->
-    <h5 class="dashboard-header">View your existing blog posts below</h5>
-
+    {{#if userBlogs}}
+    <h5 class="dashboard-header">Blog Manager - View Edit or Delete your posts below</h5>
+    {{else}}
+    <h5 class="dashboard-header">You have not created any blogs yet. </h5>
+    {{/if}}
 
     {{#each userBlogs as |userBlog|}}
     <div class="container existing-blogs" >

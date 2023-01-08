@@ -12,11 +12,11 @@ module.exports = {
         let ago = date
         let diffdays = ago.getDate() - d.getDate()
         if (diffdays == 0) {
-            return "Today"
+            return "today"
         } else if (diffdays == 1) { 
-            return diffdays + " Day old"
+            return "yesterday"
         } else {
-            return diffdays + " Days old";
+            return diffdays + "days ago";
             
         }
         

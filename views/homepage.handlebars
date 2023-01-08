@@ -5,9 +5,9 @@
           <p style="font-size:10px">ID #{{id}}</p>
           <h2>{{title}}</h2>
           <p class="blog-text-contents">{{preview_contents contents}} <a href="/blog/{{id}}">...read more</a></p>
+          <hr>
           <div class= "d-flex justify-content-between">
-          <h5>Created by: <span class="span-username">{{user.name}}</span></h5>
-          <h5 class="date" style="text-align:right;"><span class="span-date">{{format_date created_at}}</span> {{days_ago created_at}}</h5>
+          <h5>Posted {{days_ago created_at}} on {{format_date created_at}} by: <span class="span-username">{{user.name}}</span></h5>
             </div>
         </div>
         </div>

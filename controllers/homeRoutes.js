@@ -49,7 +49,7 @@ router.get('/dashboard', async (req, res) => {
         const userBlogData = await Blog.findAll({
             // TODO: Need return data by username. through req.session
             where: {
-                user_id: 2
+                user_id: req.session.user_id
             },
             attributes: ['id', 'title', 'contents', 'created_at', 'user_id'],
             include: [
