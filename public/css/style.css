@@ -131,6 +131,15 @@ margin-top: 5px;
   
 }
 
+.textarea-edit {
+  width: 90%;
+  margin: 15px;
+  border-radius: 10px;
+  padding: 1.125em 1.5em;
+  resize: none;
+  
+}
+
 .span-date {
   font-weight: bold;
 }

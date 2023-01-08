@@ -42,12 +42,12 @@ router.get('/login', (req, res) => {
 });
 
 // RENDER DASHBOARD ROUTE 
-// TODO: Need return data by username. through req.session
 router.get('/dashboard', async (req, res) => {
-
+    
     try {
         // Get all Blogs and JOIN with user data
         const userBlogData = await Blog.findAll({
+            // TODO: Need return data by username. through req.session
             where: {
                 user_id: 2
             },
@@ -99,14 +99,11 @@ router.get('/blog/:id', async (req, res) => {
           }
         ]
       })
- 
-
-        
       const viewBlogs = viewBlogData.map((viewBlog) => viewBlog.get({ plain: true }));
         
       console.log(viewBlogs)
       res.render('blog', {
-          viewBlogs: viewBlogs,
+           viewBlogs,
           logged_in: req.session.logged_in
       });
   } catch (err) {
@@ -115,4 +112,32 @@ router.get('/blog/:id', async (req, res) => {
 
 });
 
+//EDIT BLOG POST ROUTE
+router.get('/edit/:id', async (req, res) => {
+    try {
+        
+    const editBlogData = await Blog.findAll({
+        where: {
+          id: req.params.id
+        },
+        attributes: ['id','contents','title','created_at','user_id'],
+        include: [
+          {
+            model: User,
+            attributes: ['name']
+          }
+        ]
+      })
+      const editBlogs = editBlogData.map((editBlog) => editBlog.get({ plain: true }));
+        
+      console.log(editBlogs)
+      res.render('edit', {
+          editBlogs,
+          logged_in: req.session.logged_in
+      });
+  } catch (err) {
+      res.status(500).json(err);
+  }
+
+});
 module.exports = router; 
