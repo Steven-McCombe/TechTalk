@@ -24,14 +24,12 @@
             {{/each}}
             </div>
             <!-- add comment section  -->
-            {{#if logged_in}}
+            
             <div class="add-comment d-flex flex-column align-items-end">
                 <textarea placeholder="Add a comment to this blog post" class="textarea-custom"name="new-comment-text" id="commentContent" cols="" rows="3"></textarea>
                 <button value ={{id}} id="commentBtn" class="btn btn-sm btn-outline-secondary " type="button"><i class='fas fa-plus' style='color:#ffc107'></i> Comment</button>
             </div>
-            {{else}}
-            <h5><a href="/login">Log in to add comments</a></h5>
-            {{/if}}
+
         </div>
     </div>
   </div>

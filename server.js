@@ -15,10 +15,11 @@ const PORT = process.env.PORT || 3001;
 // Set up Handlebars.js engine with custom helpers
 const hbs = exphbs.create({ helpers });
 
+//cookie will expire after 5 minutes
 const sess = {
   secret: process.env.SECRET,
   cookie: {
-    maxAge:  300000 * 10,
+    maxAge: 1000 * 60 * 60 * 2 // 2 hours in milliseconds
   },
   resave: false,
   saveUninitialized: true,
