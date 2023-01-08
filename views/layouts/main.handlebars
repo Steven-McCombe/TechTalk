@@ -51,4 +51,7 @@
   <!-- Render script for logged in users only -->
   {{#if logged_in}}
   <script src="/js/logout.js"></script>
+  <script src="/js/script.js"></script>
+  {{else}}
+  <script src="/js/guestscript.js"></script>
   {{/if}}
