@@ -75,7 +75,7 @@ router.get('/dashboard', async (req, res) => {
 });
 
 // RENDER BLOG BY ID 
-// redirecting users to see all their posts with comments
+// redirecting users to see all their blogs with comments
 router.get('/blog/:id', async (req, res) => {
     try {
         

@@ -28,11 +28,11 @@
     <div class="container existing-blogs" >
         <!-- template for existing blog with icons for editing  -->
         <div class="card card-custom m-1" href=""> 
-            <p style="font-size:10px">ID #{{id}}</p>
+            <p style="font-size:10px" >ID #{{id}}</p>
             <h2 class="d-flex flex-wrap">
-                <span class="view-icon" title="View Comments"><i class='fas fa-eye m-2'></i></span>
-                <span class="delete-icon" title="Delete Post"><i class='fas fa-trash m-2' style=></i></span>
-                <span class="edit-icon" title="Edit Post"><i class='fas fa-pencil-alt m-2'></i></span>
+                <span value = {{id}} id="viewIcon" class="view-icon" title="View Comments"><i value = {{id}}  class='fas fa-eye m-2'></i></span>
+                <span value = {{id}} id="deleteIcon" class="delete-icon" title="Delete Post"><i value = {{id}} class='fas fa-trash m-2'></i></span>
+                <span value = {{id}} id="editIcon" class="edit-icon" title="Edit Post" ><i value = {{id}} class='fas fa-pencil-alt m-2'></i></span>
                 {{title}}
             </h2>
             <h5>Created by: <span class="span-username">{{user.name}}</span></h5>
@@ -44,3 +44,7 @@
     {{/each}}
 
 </div>
+
+<script src="/js/blogpost.js"></script>
+
+

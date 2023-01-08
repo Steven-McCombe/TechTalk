@@ -4,7 +4,13 @@ module.exports = {
     },
     
     preview_contents: contents => { 
-        return contents.slice(0,50) + "..."
+        if (contents == null) {
+            return contents
+        }else if (contents.length >= 51) {
+            return contents.slice(0, 50) + "..."
+        } else { 
+            return contents
+        }
     },
 
     days_ago: date => {
