@@ -1,9 +1,10 @@
 <!-- DASHBOARD HTML TEMPLATE FOR DISPLAYING EXISTING BLOGS AND OPTION TO ADD NEW -->
-
-<div class="dashboard-container container d-flex flex-column align-items-center ">
     <!-- dashboard header  -->
-    <h2>Dashboard</h2>
-    <h5 class="dashboard-header">👤 {{userBlogs.0.user.name}}</h5>
+    <hr>
+    <h2 style="text-align: center;">Dashboard</h2>
+    <hr>
+<div class="dashboard-container container d-flex flex-column align-items-center ">
+
     <!-- add a blog post form  -->
     <div class="add-blog-container container card">
         <div class="mb-1 p-1">
@@ -44,7 +45,7 @@
     {{/each}}
 
 </div>
-
+{{#if userBlogs}}
+<script src="/js/dashboard.js"></script>
+{{/if}}
 <script src="/js/blogpost.js"></script>
-
-

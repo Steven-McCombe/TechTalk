@@ -107,12 +107,12 @@ router.put('/:id', withAuth, async (req, res) => {
 //Delete blog request
 router.delete('/:id', withAuth, async (req, res) => {
     try {
-      await Blog.destroy({
+    const blogData = await Blog.destroy({
         where: {
           id: req.params.id,
         },
       });
-      res.json(dbPostData);
+      res.json(blogData);
     } catch (err) {
       console.log(err);
       res.status(500).json(err);

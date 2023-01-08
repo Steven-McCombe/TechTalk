@@ -4,7 +4,7 @@ async function commentForm(event) {
     event.preventDefault();
 
     const blog_id = event.target.getAttribute('value');
-    const comment_body = document.querySelector('#commentContent').value;
+    const comment_body = document.querySelector('#commentContent').value.trim();
 
   console.log(comment_body)
   console.log(blog_id)

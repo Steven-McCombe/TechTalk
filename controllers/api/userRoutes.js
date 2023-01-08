@@ -1,9 +1,30 @@
 const router = require('express').Router();
 const { User } = require('../../models');
 
+//Get all users
+router.get('/', async (req, res) => {
+  try {
+    const userData = await User.findAll({
+      attributes: ['id', 'name', 'email',],
+      exclude: ['password'],
+      order: [['id', 'ASC']],
+
+    });
+    res.json(userData)
+  } catch (err) {
+    res.status(500).json(err)
+  }
+});
+
+
+//Create a new User and save their session id
 router.post('/', async (req, res) => {
   try {
-    const userData = await User.create(req.body);
+    const userData = await User.create({
+      name: req.body.name,
+      password: req.body.password,
+      email: req.body.email
+    });
 
     req.session.save(() => {
       req.session.user_id = userData.id;

@@ -26,6 +26,9 @@
         {{#if logged_in}}
           <button id = "homeBtn" class="btn btn-sm btn-outline-secondary" type="button"><i alt="home icon" class='fas fa-home' style='color:#ffc107'></i> Home</button>
           <button id = "dashboardBtn" class="btn btn-sm btn-outline-secondary" type="button"><i alt="dashboard icon" class='fas fa-archive' style='color:#ffc107'></i> Dashboard</button>
+          {{else}}
+            <button id = "guesthomeBtn" class="btn btn-sm btn-outline-secondary" type="button"><i alt="home icon" class='fas fa-home' style='color:#ffc107'></i> Home</button>
+          <button id = "guestdashboardBtn" class="btn btn-sm btn-outline-secondary" type="button"><i alt="dashboard icon" class='fas fa-archive' style='color:#ffc107'></i> Dashboard</button>
           {{/if}}
         <!-- Conditionally render login or logout buttons -->
           {{#if logged_in}}

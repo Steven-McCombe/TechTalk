@@ -47,7 +47,7 @@ router.get('/dashboard', async (req, res) => {
     try {
         // Get all Blogs and JOIN with user data
         const userBlogData = await Blog.findAll({
-            // TODO: Need return data by username. through req.session
+           
             where: {
                 user_id: req.session.user_id
             },
@@ -66,7 +66,8 @@ router.get('/dashboard', async (req, res) => {
         console.log(userBlogs)
         res.render('dashboard', {
             userBlogs,
-            logged_in: req.session.logged_in
+            logged_in: req.session.logged_in,
+            user_id: req.session.user_id
         });
     } catch (err) {
         res.status(500).json(err);
