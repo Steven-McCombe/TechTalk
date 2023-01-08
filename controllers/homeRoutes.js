@@ -3,7 +3,7 @@ const sequelize = require('../config/connection');
 const { User, Blog, Comments } = require('../models');
 const withAuth = require('../utils/auth');
 
-
+//RENDER HOMEPAGE
 router.get('/', async (req, res) => {
     try {
         // Get all Blogs and JOIN with user data
@@ -15,7 +15,8 @@ router.get('/', async (req, res) => {
                     attributes: ['name'],
                 },
             ],
-            order: [['created_at', 'DESC']]
+            order: [['created_at', 'DESC']],
+            limit: 10,
         });
 
         const blogs = blogData.map((blog) => blog.get({ plain: true }));
@@ -73,5 +74,45 @@ router.get('/dashboard', async (req, res) => {
 
 });
 
+// RENDER BLOG BY ID 
+// redirecting users to see all their posts with comments
+router.get('/blog/:id', async (req, res) => {
+    try {
+        
+    const viewBlogData = await Blog.findAll({
+        where: {
+          id: req.params.id
+        },
+        attributes: ['id','contents','title','created_at','user_id'],
+        include: [
+          {
+            model: Comments,
+            attributes: ['id', 'comment_body', 'blog_id', 'user_id', 'created_at'],
+            include: {
+              model: User,
+              attributes: ['name']
+            }
+          },
+          {
+            model: User,
+            attributes: ['name']
+          }
+        ]
+      })
+ 
+
+        
+      const viewBlogs = viewBlogData.map((viewBlog) => viewBlog.get({ plain: true }));
+        
+      console.log(viewBlogs)
+      res.render('blog', {
+          viewBlogs: viewBlogs,
+          logged_in: req.session.logged_in
+      });
+  } catch (err) {
+      res.status(500).json(err);
+  }
+
+});
 
 module.exports = router; 

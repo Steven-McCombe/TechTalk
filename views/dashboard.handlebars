@@ -1,8 +1,9 @@
 <!-- DASHBOARD HTML TEMPLATE FOR DISPLAYING EXISTING BLOGS AND OPTION TO ADD NEW -->
+
 <div class="dashboard-container container d-flex flex-column align-items-center ">
 
     <!-- dashboard header  -->
-    <h5 class="dashboard-header">Welcome back {{user.name}}. Would you like to add a new blog post?</h5>
+    <h5 class="dashboard-header">Welcome back {{userBlogs.0.user.name}}. Would you like to add a new blog post?</h5>
     <!-- add a blog post form  -->
     <div class="add-blog-container container card">
         <div class="mb-1 p-1">
@@ -23,6 +24,7 @@
     <div class="container existing-blogs" >
         <!-- template for existing blog with icons for editing  -->
         <div class="card card-custom m-1" href=""> 
+            <p style="font-size:10px">ID #{{id}}</p>
             <h2 class="d-flex flex-wrap">
                 <span class="view-icon" title="View Comments"><i class='fas fa-eye m-2'></i></span>
                 <span class="delete-icon" title="Delete Post"><i class='fas fa-trash m-2' style=></i></span>
@@ -38,5 +40,3 @@
     {{/each}}
 
 </div>
-
-

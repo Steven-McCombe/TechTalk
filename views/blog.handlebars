@@ -1,0 +1,32 @@
+  
+  {{#each viewBlogs}}
+  <!-- HTML TEMPLATE FOR SPECIFIC POST   -->
+    <!-- blog section  -->
+    <div class="container">
+      <div class="blog-post ">
+        <div class="card blog-contents-card card-custom">
+          <p style="font-size:10px">ID #{{id}}</p>
+          <h2>{{title}}</h2>
+          <h5>Created by: <span class="span-username">{{user.name}}</span></h5>
+          <p class="blog-text-contents">{{contents}}</p>
+          <h5 class="date" style="text-align:right;"><span class="span-date">{{format_date created_at}}</span> {{days_ago created_at}}</h5>
+        </div>
+        <!-- comment container -->
+        <div class="d-flex flex-wrap align-items-end justify-content-between">
+          {{#each comments}}
+            <!-- render comment section  -->
+            <div class="comment">
+            <div class="sample-comment">
+                <p class="comment-contents"><span class="span-username">{{user.name}}</span><br>{{comment_body}}<br><span class="span-date">{{format_date created_at}}</span> {{days_ago created_at}}</p>
+            </div>
+            {{/each}}
+            </div>
+            <!-- add comment section  -->
+            <div class="add-comment d-flex flex-column align-items-end">
+                <textarea placeholder="Add a comment to this blog post" class="textarea-custom"name="new-comment-text" id="" cols="" rows="3"></textarea>
+                <button class="btn btn-sm btn-outline-secondary " type="button"><i class='fas fa-plus' style='color:#ffc107'></i> Comment</button>
+            </div>
+        </div>
+    </div>
+  </div>
+    {{/each}}
