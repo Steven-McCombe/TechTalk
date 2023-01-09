@@ -43,6 +43,18 @@ async function deleteBlog(id) {
     console.log(blogId)
   };
 
-document.querySelector('#deleteIcon').addEventListener('click', handleBlogDelete);
-document.querySelector('#viewIcon').addEventListener('click', handleBlogView);
-document.querySelector('#editIcon').addEventListener('click', handleBlogEdit);
+const deleteBlogBtns = document.querySelectorAll('.delete-icon')
+const viewBlogBtns = document.querySelectorAll('.view-icon')
+const editBlogBtns = document.querySelectorAll('.edit-icon')
+
+//iterate over each button as query selector only returns the first node.
+for (let deleteBlogBtn of deleteBlogBtns) {
+  deleteBlogBtn.addEventListener('click', handleBlogDelete);
+}
+for (let viewBlogBtn of viewBlogBtns) {
+  viewBlogBtn.addEventListener('click', handleBlogView);
+}
+for (let editBlogBtn of editBlogBtns) {
+  editBlogBtn.addEventListener('click', handleBlogEdit);
+}
+
