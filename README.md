@@ -1,7 +1,5 @@
 # TechTalk
 
-# ECOM-BACK-END
-
 ## Description
 Welcome to TechTalk! This is a place where tech enthusiasts can come together to share their ideas and knowledge. Whether you're looking to read about the latest tech trends or write about your own experiences and insights, our platform is here to support you.
 
