@@ -1,0 +1,15 @@
+
+{{#each editComments}}
+<div class="container d-flex flex-column align-items-center justify-content-center">
+<h2> Comment Editor</h2>
+<div class="add-blog-container container card">
+            <label for="post-content" class="form-label">Comment Contents:</label>
+        <div class="mb-3 p-1 d-flex align-items-end flex-column">
+            <textarea class="form-control" placeholder="Contents of the Blog" id="edit-content" rows="10">{{comment_body}}</textarea>
+            <button value = {{id}} id = "saveButton" class="btn btn-sm btn-outline-secondary " type="button"><i class='fas fa-plus' style='color:#ffc107'></i> Save Changes</button>
+        </div>
+    </div>
+</div>
+{{/each}}
+
+<script src="/js/commenteditor.js"></script>

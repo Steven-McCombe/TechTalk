@@ -141,7 +141,7 @@ router.get('/edit/:id', async (req, res) => {
   }
 
 });
-
+//Find comments by user ID
 router.get('/comment/:id', async (req, res) => {
     try {
 
@@ -175,6 +175,35 @@ router.get('/comment/:id', async (req, res) => {
     } catch (err) {
       res.status(500).json(err)
     }
-  });
+});
+  
+//EDIT COMMENT BY ID Route
+router.get('/comment/edit/:id', async (req, res) => {
+  try {
+      
+  const editCommentData = await Comments.findAll({
+      where: {
+        id: req.params.id
+      },
+      attributes: ['id','comment_body','created_at','blog_id'],
+      include: [
+        {
+          model: User,
+          attributes: ['name']
+        }
+      ]
+    })
+    const editComments = editCommentData.map((editComment) => editComment.get({ plain: true }));
+      
+    console.log(editComments)
+    res.render('editcomments', {
+        editComments,
+        logged_in: req.session.logged_in
+    });
+} catch (err) {
+    res.status(500).json(err);
+}
+
+});
 
 module.exports = router; 

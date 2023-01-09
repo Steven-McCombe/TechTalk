@@ -32,12 +32,12 @@ async function deleteComment(id) {
   };
   
   // function to edit a targeted blog
-//   const handleBlogEdit = (event) => {
-//     event.stopPropagation();
-//     const blogId = event.target.getAttribute('value');
-//     document.location.replace('/edit/' + blogId)
-//     console.log(blogId)
-//   };
+  const handleCommentEdit = (event) => {
+    event.stopPropagation();
+    const commentId = event.target.getAttribute('value');
+    document.location.replace('/comment/edit/' + commentId)
+
+  };
 
 
   // function to view a targeted blog 
@@ -45,13 +45,11 @@ async function deleteComment(id) {
     event.stopPropagation();
     const blogId = event.target.getAttribute('value');
     document.location.replace('/blog/' + blogId)
-    console.log(blogId)
   };
 
 const deleteCommentBtns = document.querySelectorAll('.delete-icon')
 const viewBlogBtns = document.querySelectorAll('.view-icon')
-
-// const editBlogBtns = document.querySelectorAll('.edit-icon')
+const editCommentBtns = document.querySelectorAll('.edit-icon')
 
 //iterate over each button as query selector only returns the first node.
 for (let deleteCommentBtn of deleteCommentBtns) {
@@ -60,7 +58,7 @@ for (let deleteCommentBtn of deleteCommentBtns) {
 for (let viewBlogBtn of viewBlogBtns) {
   viewBlogBtn.addEventListener('click', handleCommentView);
 }
-// for (let editCommentBtn of editCommentBtns) {
-//   editCommentBtn.addEventListener('click', handleBlogEdit);
-// }
+for (let editCommentBtn of editCommentBtns) {
+  editCommentBtn.addEventListener('click', handleCommentEdit);
+}
 
