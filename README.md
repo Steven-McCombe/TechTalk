@@ -15,7 +15,7 @@ We hope you find this platform helpful and enjoyable as you explore the world of
 * [Usage](#usage)
 * [License](#license)
 * [Contribute](#contribute)
-* [Tests](#tests)
+* [Report Bugs](#bugreport)
 * [Questions](#questions)
 
 ## Installation
@@ -23,10 +23,13 @@ No Installation requirements.
 
 
 ## Usage
-Navigate to the following URL in your browser and sign up. 
+Navigate to the following URL in your browser. 
 ```h
 https://powerful-stream-84174.herokuapp.com/
 ```
+New users will need to Sign Up. Click the Login/Signup button to be redirected to the signup form and enter your desired credentials then click submit.
+
+Existing users can login via the Login/Signup button. Enter your existing credentials to log in. 
 
 Application Screenshot:
 
@@ -41,8 +44,8 @@ Application Screenshot:
 ## Contribute
 N/A
 
-## Tests
-N/A
+## BugReport
+- [E-mail Bug Report](mailto:smccombe93@gmail.com)
 
 ## Questions
 Contact Links:
