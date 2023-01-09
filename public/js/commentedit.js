@@ -38,6 +38,8 @@ async function deleteComment(id) {
 //     document.location.replace('/edit/' + blogId)
 //     console.log(blogId)
 //   };
+
+
   // function to view a targeted blog 
   const handleCommentView = (event) => {
     event.stopPropagation();
