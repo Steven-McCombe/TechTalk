@@ -67,7 +67,7 @@ router.get('/dashboard', async (req, res) => {
         res.render('dashboard', {
             userBlogs,
             logged_in: req.session.logged_in,
-            user_id: req.session.user_id
+            session_user_id: req.session.user_id
         });
     } catch (err) {
         res.status(500).json(err);
@@ -141,4 +141,40 @@ router.get('/edit/:id', async (req, res) => {
   }
 
 });
+
+router.get('/comment/:id', async (req, res) => {
+    try {
+
+  // use the id to retrieve the specific comment from the database
+      const commentData = await Comments.findAll({
+        where: {
+          user_id: req.session.user_id
+      },
+        attributes: ['id','comment_body', 'created_at','blog_id'],
+        include: [
+        //returns data from user model to show who created it
+          {
+            model: User,
+            attributes: ['name'],
+            exclude: ['password']
+          },
+          {
+            model: Blog,
+            attributes: ['title']
+          }
+        ],
+        order: [['created_at', 'DESC']],
+  
+      });
+      const comments = commentData.map((comment) => comment.get({ plain: true }));
+      console.log(comments)
+      res.render('comments', {
+        comments,
+        logged_in: req.session.logged_in
+    });
+    } catch (err) {
+      res.status(500).json(err)
+    }
+  });
+
 module.exports = router; 

@@ -1,0 +1,27 @@
+<div class="container">
+{{#if comments}}
+<hr>
+<h2 style="text-align: center;">Viewing comments made by {{comments.0.user.name}}</h2>
+<hr>    
+          {{#each comments}}
+            <!-- render comment section  -->
+            <div class="comment">
+            <div class="card card-custom">
+                <p class=""><span class="span-username">{{blog.title}}</span></p>  
+                <br>
+                <p>{{comment_body}}</p>
+                <br>
+                <p>Posted {{days_ago created_at}} on {{format_date created_at}}</p>
+                            <h2 class="d-flex flex-wrap">
+                <span value = {{blog_id}} id="viewIcon" class="view-icon" title="View Blog"><i value = {{id}}  class='fas fa-eye m-2'></i></span>
+                <span value = {{id}} id="deleteIcon" class="delete-icon" title="Delete Comments"><i value = {{id}} class='fas fa-trash m-2'></i></span>
+                <span value = {{id}} id="editIcon" class="edit-icon" title="Edit Comments" ><i value = {{id}} class='fas fa-pencil-alt m-2'></i></span>
+            </h2>
+
+            </div>
+            {{/each}}
+            <script src="/js/commentedit.js"></script>
+{{else}}
+<h2 style="text-align: center;">You have not commented on anything yet</h2>
+{{/if}}
+</div>

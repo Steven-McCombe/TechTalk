@@ -85,12 +85,13 @@ router.put('/:id', withAuth, async (req, res) => {
   }
 });
 
-//Delete comment request
+//!Delete comment request
 router.delete('/:id', withAuth, async (req, res) => {
     try {
      const commentData = await Comments.destroy({
         where: {
-          id: req.params.id,
+         id: req.params.id,
+        user_id: req.session.user_id
         },
       });
       res.json(commentData);
