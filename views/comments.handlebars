@@ -7,11 +7,12 @@
             <!-- render comment section  -->
             <div class="comment">
             <div class="card card-custom">
-                <p class=""><span class="span-username">{{blog.title}}</span></p>  
-                <br>
+                <p class="">Blog: <span class="span-username">{{blog.title}}</span></p>  
+                <hr>
+                <span class="">You said:</span>
                 <p>{{comment_body}}</p>
-                <br>
-                <p>Posted {{days_ago created_at}} on {{format_date created_at}}</p>
+                <hr>
+                <p style="font-size: 12px;">Posted {{days_ago created_at}} on {{format_date created_at}}</p>
                             <h2 class="d-flex flex-wrap">
                 <span value = {{blog_id}} id="viewIcon" class="view-icon" title="View Blog"><i value = {{blog_id}}  class='fas fa-eye m-2'></i></span>
                 <span value = {{id}} id="deleteIcon" class="delete-icon" title="Delete Comments"><i value = {{id}} class='fas fa-trash m-2'></i></span>
