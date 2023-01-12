@@ -1,8 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
+const { formatNamedParameters } = require('sequelize/types/utils');
 const sequelize = require('../config/connection');
 
 class Comments extends Model {}
-
+// comments model with data and parameters 
 Comments.init(
   {
     id: {

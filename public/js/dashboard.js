@@ -43,6 +43,7 @@ async function deleteBlog(id) {
     console.log(blogId)
   };
 
+  // get elements by class
 const deleteBlogBtns = document.querySelectorAll('.delete-icon')
 const viewBlogBtns = document.querySelectorAll('.view-icon')
 const editBlogBtns = document.querySelectorAll('.edit-icon')

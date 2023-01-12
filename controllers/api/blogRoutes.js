@@ -85,7 +85,6 @@ router.post('/', withAuth, async (req, res) => {
     }
   });
 //Edit a blog post 
-
 router.put('/:id', withAuth,  async (req, res) => {
   try {
     const editblogData = await Blog.update(

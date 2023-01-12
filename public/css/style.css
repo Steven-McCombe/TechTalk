@@ -29,11 +29,13 @@ h2 {
   font-size: 20px;
   
 }
+
 .dashboard-header{
   margin: 10px;
   padding: 10px;
 
 }
+/* button hover change text color  */
 .btn:hover {
   color:#ffc107;
 }
@@ -111,6 +113,8 @@ margin-top: 5px;
   margin-top: 20px;
   border-radius: 10px;
 }
+
+/* comment box styling  */
 .add-comment {
   background-color: #fff;
 	font-size: 1em;
@@ -122,6 +126,7 @@ margin-top: 5px;
   margin: 5px;
 }
 
+/* changing the default text area to something more modern */
 .textarea-custom {
   width: 26em;
   margin: 15px;
@@ -139,14 +144,14 @@ margin-top: 5px;
   resize: none;
   
 }
-
+/* target spans to adjust font weight  */
 .span-date {
   font-weight: bold;
 }
 .span-username{
   font-weight: bold;
 }
-
+/* icon hover change color  */
 .view-icon:hover{
   color: blue;
   cursor: pointer;

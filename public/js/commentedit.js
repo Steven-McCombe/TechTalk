@@ -4,7 +4,7 @@
 async function deleteComment(id) {
     event.preventDefault();
     event.stopPropagation();
-
+// alert the user to see if they really want to delete.
     if (window.confirm("Are you sure you want to delete this comment?")) {
       const response = await fetch(`/api/comment/${id}`, {
         method: 'DELETE',
@@ -47,6 +47,7 @@ async function deleteComment(id) {
     document.location.replace('/blog/' + blogId)
   };
 
+  // get elements by class 
 const deleteCommentBtns = document.querySelectorAll('.delete-icon')
 const viewBlogBtns = document.querySelectorAll('.view-icon')
 const editCommentBtns = document.querySelectorAll('.edit-icon')
